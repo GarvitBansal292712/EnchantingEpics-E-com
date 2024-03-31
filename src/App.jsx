@@ -2,6 +2,8 @@ import React from "react"
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import Faq from "./components/Faq";
+import Shippingreturn from "./components/Shippingreturn";
+import Storepolicy from "./components/Storepolicy";
 
 
 function App() {
@@ -10,7 +12,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Faq/>
+    <Storepolicy/>
     <Footer/>
     </>
   )
