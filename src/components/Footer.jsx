@@ -8,7 +8,7 @@ const Footer = () => {
          {/* Address Column */}
             <div className="flex flex-col gap-5  md:gap-10">
             <h1>Enchanting Epics</h1>
-            <p>
+            <p className="leading-[30px]">
                 500 Terry Francine St. <br /> San Francisco, <br /> CA 94158
                 123-456-7890 <br />
                 garvitbasnal2303@gmail.com
@@ -18,19 +18,19 @@ const Footer = () => {
             <div className="flex flex-col gap-5  md:gap-10">
             <h1>Shop</h1>
             <ul >
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="" >FAQ</a>
                 </li>
                 {/* Later these anchor tags will be changed according to the react router */}
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Shipping & Returns</a>
                 </li>
                 {/* Later these anchor tags will be changed according to the react router */}
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Store Policy</a>
                 </li>
                 {/* Later these anchor tags will be changed according to the react router */}
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Payment Methods</a>
                 </li>
                 {/* Later these anchor tags will be changed according to the react router */}
@@ -40,19 +40,19 @@ const Footer = () => {
             <div className="flex flex-col gap-5  md:gap-10">
             <h1>Socials</h1>
             <ul>
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Facebook</a>
                 </li>
 
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">X (Twitter)</a>
                 </li>
 
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Instagram</a>
                 </li>
 
-                <li className="hover:underline">
+                <li className="hover:underline mb-[8px]">
                 <a href="">Pinterest</a>
                 </li>
             </ul>
@@ -66,7 +66,7 @@ const Footer = () => {
                 className="bg-transparent border-4 border-white p-2 mb-1"
                 placeholder="Enter Your Email here.."
             />
-            <button className="bg-white p-2 text-[#0e345a] hover:bg-[#0e345a] hover:text-[#ffffff]">
+            <button className="bg-white p-2 text-[#0e345a] hover:bg-[#0e345a] transition-all hover:text-[#ffffff]">
                 Subscribe
             </button>
             </div>
