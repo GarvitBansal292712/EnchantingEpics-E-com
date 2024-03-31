@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Faq from "./components/Faq";
 import Shippingreturn from "./components/Shippingreturn";
 import Storepolicy from "./components/Storepolicy";
+import About from "./components/About";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Storepolicy/>
+    <About/>
     <Footer/>
     </>
   )

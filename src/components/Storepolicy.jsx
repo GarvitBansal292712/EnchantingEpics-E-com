@@ -8,26 +8,26 @@ import { MdOutlinePayment } from "react-icons/md";
 const Storepolicy = () => {
   return (
     <>
-      <h1 className="text-center font-thin text-[1.2rem] text-[#0e345a] mt-[34px]">
+      <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
         Enchanting Epics
       </h1>
-      <h1 className="text-center font-extrabold font-serif text-[#0e345a] text-[3rem] mb-5 ">
+      <h1 className="text-center font-extrabold font-serif text-[#309aac] text-[3rem] mb-5 ">
         Store Policy
       </h1>
       {/* Shipping & Return MAIN CONTAINER */}
       <div className="flex justify-center flex-col  mb-[120px]  md:mx-[120px] ">
         {/* Shipping & Return Body Container   */}
-        <div className="flex justify-center flex-col border-[15px] bg-white border-[#0e345a] p-10 ">
+        <div className="flex justify-center flex-col border-[15px] bg-white border-[#e7f1f0]   p-10 ">
           <div className="flex items-center gap-2">
-            <RiCustomerService2Fill className="text-[#0e345a] text-[1.5rem] font-bold " />
-            <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+            <RiCustomerService2Fill className="text-[#309aac] text-[1.5rem] font-bold " />
+            <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
               Customer Care
             </h1>
           </div>
           <br />
           {/* Shipping & Return BODY */}
           <div className="flex flex-col justify-center">
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               • Contact Information: <br />
               <span className="font-bold">
                 {" "}
@@ -51,13 +51,13 @@ const Storepolicy = () => {
             </p>{" "}
             <br />
             <div className="flex items-center gap-2">
-              <AiOutlineSafety className="text-[#0e345a] text-[1.5rem] font-bold " />
-              <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+              <AiOutlineSafety className="text-[#309aac] text-[1.5rem] font-bold " />
+              <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
                 Privacy & Safety
               </h1>{" "}
               <br /> <br />
             </div>
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               Data Protection: <br />
               We take your privacy seriously and adhere to strict data
               protection measures to ensure the security of your personal
@@ -76,13 +76,13 @@ const Storepolicy = () => {
               <br /> <br />
             </p>
             <div className="flex items-center gap-2">
-              <BiPurchaseTag className="text-[#0e345a] text-[1.5rem] font-bold " />
-              <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+              <BiPurchaseTag className="text-[#309aac] text-[1.5rem] font-bold " />
+              <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
                 Wholesale Inquiries
               </h1>{" "}
               <br /> <br />
             </div>
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               Wholesale Program: <br />
               Interested in becoming a wholesale partner? Learn more about our
               wholesale program and the benefits of partnering with us. <br />{" "}
@@ -100,13 +100,13 @@ const Storepolicy = () => {
               orders. Contact us for more information. <br /> <br />
             </p>
             <div className="flex items-center gap-2">
-              <MdOutlinePayment className="text-[#0e345a] text-[1.5rem] font-bold " />
-              <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+              <MdOutlinePayment className="text-[#309aac] text-[1.5rem] font-bold " />
+              <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
                 Payment Methods
               </h1>{" "}
               <br /> <br />
             </div>
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               • Credit / Debit Cards <br /> • PAYPAL <br /> • Offline Payments{" "}
               <br />
             </p>

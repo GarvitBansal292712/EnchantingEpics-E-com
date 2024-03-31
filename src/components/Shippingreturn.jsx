@@ -4,26 +4,26 @@ import { FaExchangeAlt } from "react-icons/fa";
 const Shippingreturn = () => {
   return (
     <>
-      <h1 className="text-center font-thin text-[1.2rem] text-[#0e345a] mt-[34px]">
+      <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
         Enchanting Epics
       </h1>
-      <h1 className="text-center font-extrabold font-serif text-[#0e345a] text-[3rem] mb-5 ">
+      <h1 className="text-center font-extrabold font-serif text-[#309aac] text-[3rem] mb-5 ">
         Shipping & Returns
       </h1>
       {/* Shipping & Return MAIN CONTAINER */}
       <div className="flex justify-center flex-col  mb-[120px]  md:mx-[120px] ">
         {/* Shipping & Return Body Container   */}
-        <div className="flex justify-center flex-col border-[15px] bg-white border-[#0e345a] p-10 ">
+        <div className="flex justify-center flex-col border-[15px] bg-white border-[#e7f1f0] p-10 ">
           <div className="flex items-center gap-2">
-            <MdLocalShipping className="text-[#0e345a] text-[1.5rem] font-bold " />
-            <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+            <MdLocalShipping className="text-[#309aac] text-[1.5rem] font-bold " />
+            <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
               Shipping Policy
             </h1>
           </div>
           <br />
           {/* Shipping & Return BODY */}
           <div className="flex flex-col justify-center">
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               Welcome to our book store! We're excited to deliver your favorite
               reads to your doorstep. Please review the following information to
               understand how your orders will be shipped. <br />
@@ -55,13 +55,13 @@ const Shippingreturn = () => {
             </p>{" "}
             <br />
             <div className="flex items-center gap-2">
-              <FaExchangeAlt className="text-[#0e345a] text-[1.5rem] font-bold " />
-              <h1 className="text-[#0e345a] text-[1.5rem] font-bold ">
+              <FaExchangeAlt className="text-[#309aac] text-[1.5rem] font-bold " />
+              <h1 className="text-[#309aac] text-[1.5rem] font-bold ">
                 Return & Exchange Policy
               </h1>{" "}
               <br /> <br />
             </div>
-            <p className="text-lg  text-[#0e345a] font-thin tracking-widest">
+            <p className="text-lg  text-[#309aac] font-thin tracking-widest">
               We want you to love every book you purchase from us. If for any
               reason you are not satisfied, you may return or exchange eligible
               items within 6-7 days of receiving your order. Please review the

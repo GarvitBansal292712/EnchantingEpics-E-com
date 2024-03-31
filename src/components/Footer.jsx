@@ -2,7 +2,7 @@ import React from "react";
 const Footer = () => {
   return (
     // footer container
-    <div className="flex flex-col flex-wrap bg-[#0e345a] text-white justify-center items-center p-5">
+    <div className="flex flex-col flex-wrap bg-[#e7f1f0] text-[#309aac] justify-center items-center p-5">
       {/* Footer Body Container */}
       <div className="flex flex-wrap m-8 justify-center gap-[50px] md:gap-[110px]">
          {/* Address Column */}
@@ -66,7 +66,7 @@ const Footer = () => {
                 className="bg-transparent border-4 border-white p-2 mb-1"
                 placeholder="Enter Your Email here.."
             />
-            <button className="bg-white p-2 text-[#0e345a] hover:bg-[#0e345a] transition-all hover:text-[#ffffff]">
+            <button className="bg-white p-2 text-[#0e345a] hover:bg-[#309aac] transition-all hover:text-[#ffffff]">
                 Subscribe
             </button>
             </div>

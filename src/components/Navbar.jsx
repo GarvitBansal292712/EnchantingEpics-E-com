@@ -18,14 +18,14 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className="bg-[#e7f1f0]">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-[#0e345a] hover:text-[#0e345a7a] ">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-[#309aac] hover:text-[#309aac7a] ">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -43,7 +43,7 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center">
                   <span
                     className="text-xl font-bold"
-                    style={{ color: "#0e345a" }}
+                    style={{ color: "#309aac" }}
                   >
                     E
                   </span>
@@ -52,7 +52,7 @@ export default function Example() {
                   </span>
                   <span
                     className="text-xl font-bold"
-                    style={{ color: "#0e345a" }}
+                    style={{ color: "#309aac" }}
                   >
                     E
                   </span>
@@ -68,8 +68,8 @@ export default function Example() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "text-[#0e345a7a] text-lg text-[#0e345a]"
-                            : "text-[#0e345a] text-lg hover:text-[#0e345a7a]",
+                            ? "text-[#309aac7a] text-lg text-[#309aac]"
+                            : "text-[#309aac] text-lg hover:text-[#309aac7a]",
                           "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -85,7 +85,7 @@ export default function Example() {
                 {/* SHOPPING CART ICON */}
                 <button
                   type="button"
-                  className="relative rounded-full bg-white p-1 text-[#0e345a] text-lg hover:text-[#0e345a7a]  focus:text-[#0e345a7a]"
+                  className="relative rounded-full bg-[#e7f1f0] p-1 text-[#309aac] text-lg hover:text-[#309aac7a]  focus:text-[#309aac7a]"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
@@ -166,8 +166,8 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "hover:text-[#0e345a7a] text-[#0e345a] "
-                      : "text-[#0e345a]  hover:text-[#0e345a7a]  text-center text-[25px]",
+                      ? "hover:text-[#309aac7a] text-[#309aac] "
+                      : "text-[#309aac]  hover:text-[#309aac7a]  text-center text-[25px]",
                     "block  rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
