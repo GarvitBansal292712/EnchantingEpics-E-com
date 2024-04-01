@@ -1,5 +1,6 @@
-name: Deploy
+# Updated GitHub Actions workflow for Node.js version 20
 
+name: Deploy
 on:
   push:
     branches:
@@ -9,18 +10,17 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
 
       - name: Build project
         run: npm run build
@@ -36,7 +36,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2
