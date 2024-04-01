@@ -1,7 +1,7 @@
 import React from "react";
 import { MdLocalShipping } from "react-icons/md";
 import { FaExchangeAlt } from "react-icons/fa";
-const Shippingreturn = () => {
+const ShippingReturn = () => {
   return (
     <>
       <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
@@ -103,4 +103,4 @@ const Shippingreturn = () => {
   );
 };
 
-export default Shippingreturn;
+export default ShippingReturn;
