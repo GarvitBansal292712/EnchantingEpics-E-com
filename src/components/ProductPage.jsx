@@ -3,8 +3,8 @@ import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
 const ProductPage = () => {
   return (
     <>
-      <div className="flex justify-center gap-6 flex-wrap m-6 items-center">
-        <div className="flex flex-col justify-center gap-8">
+      <div className="flex justify-center gap-6 flex-wrap mx-6 my-11 items-center">
+        <div className="flex flex-col justify-center gap-8 pt-4 ">
           {/* This image will be dynamically loaded  */}
 
           <img
@@ -19,7 +19,7 @@ const ProductPage = () => {
                     aliquam consequuntur autem perspiciatis quas ipsa tenetur eveniet?`}
           </p>
         </div>
-        <div className="flex flex-col justify-center gap-2">
+        <div className="flex flex-col justify-center gap-2 w-full md:w-[30vw]">
           {/* Product Name will be dynamically loaded */}
           <h1 className="text-[#309aac] font-thin text-[1.5rem]">
             Interior Design Book
@@ -41,14 +41,13 @@ const ProductPage = () => {
           <button className="bg-[#414141] text-white p-3 hover:bg-[#41414189]">
             Buy Now
           </button>
-          <div className="flex flex-col justify-center md:w-[30vw]">
+          <div className="flex flex-col justify-center  ">
             {/* ABOUT INFO OF THE PRODUCT INCLUDING SHIPPING AND RETURNS */}
             <div className="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white">
-              <details
-                className="group p-6 [&_summary::-webkit-details-marker]:hidden"
-                open
-              >
+              <details className="group p-6 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+                  {/* This descrption will be dynamically loaded  */}
+
                   <h2 className="text-lg font-medium">PRODUCT INFO</h2>
 
                   <span className="relative size-5 shrink-0">
@@ -83,6 +82,7 @@ const ProductPage = () => {
                     </svg>
                   </span>
                 </summary>
+                {/* This descrption will be dynamically loaded  */}
 
                 <p className="mt-4 leading-relaxed text-gray-700">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
