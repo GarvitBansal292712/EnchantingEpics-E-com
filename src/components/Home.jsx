@@ -1,6 +1,7 @@
 import React from "react";
 import herofullimg from "../assets/images/herofullimg.jpg";
 import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
+import { NavLink } from "react-router-dom";
 const Home = () => {
   return (
     <>
@@ -189,9 +190,9 @@ const Home = () => {
           MANY BOOKS
         </h1>
         {/* Router REQUIRED */}
-        <a className="border-[3px]  border-white bg-none py-2 px-5 cursor-pointer hover:bg-black hover:text-white transition-all ">
+        <NavLink to="/about" className="border-[3px]  border-white bg-none py-2 px-5 cursor-pointer hover:bg-black hover:text-white transition-all ">
           Read Our Story
-        </a>
+        </NavLink>
         <hr className="text-black border-1 border-black w-8 mt-11 " />
 
         <div className="bg-[#309aac] h-full w-full top-[120px] -z-10 absolute"></div>

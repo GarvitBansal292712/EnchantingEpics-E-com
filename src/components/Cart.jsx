@@ -7,11 +7,11 @@ const Cart = () => {
       {/* CART CONTAINER */}
       <div className="flex flex-wrap justify-center gap-4">
         {/* My Cart */}
-        <div className="flex flex-col">
+        <div className="flex flex-col text-white">
           <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
             My Cart
           </h1>
-          <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-slate-200 border-y-2 my-2 p-3 border-[#cfd6de]">
+          <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-[#309aac] border-y-2 my-2 p-3 border-[#cfd6de]">
             {/*  Image of the Product */}
             <img
               src={InteriorDesignBook}
@@ -31,7 +31,7 @@ const Cart = () => {
               name=""
               value={1}
               id=""
-              className="border-[1px] border-[#00000096] p-2  w-[4rem]"
+              className="border-[1px] text-black border-[#00000096] p-2  w-[4rem]"
             />
 
             {/* Delete Button */}
@@ -41,7 +41,7 @@ const Cart = () => {
               </button>
             </div>
           </div>
-          <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-slate-200 border-y-2 my-2 p-3 border-[#cfd6de]">
+          <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-[#309aac] border-y-2 my-2 p-3 border-[#cfd6de]">
             {/*  Image of the Product */}
             <img
               src={InteriorDesignBook}
@@ -61,7 +61,7 @@ const Cart = () => {
               name=""
               value={1}
               id=""
-              className="border-[1px] border-[#00000096] p-2  w-[4rem]"
+              className="border-[1px] text-black border-[#00000096] p-2  w-[4rem]"
             />
 
             {/* Delete Button */}
@@ -73,8 +73,8 @@ const Cart = () => {
           </div>
         </div>
         {/* Order Summary */}
-        <div className="flex flex-col justify-center w-full md:w-[20vw] bg-slate-200 p-2">
-          <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
+        <div className="flex flex-col justify-center text-white w-full md:w-[30vw] bg-[#309aac] p-2">
+          <h1 className="text-center font-thin text-[1.2rem]  mt-[34px]">
             Order Summary
           </h1>
           <div className="flex justify-evenly   items-center gap-8 flex-wrap border-y-2 my-2 p-3 border-[#cfd6de]">
@@ -82,12 +82,12 @@ const Cart = () => {
             <h1>Subtotal</h1>
             <h1>$22.00</h1>
           </div>
-          <div className="flex flex-wrap justify-evenly  w-full md:w-[20vw] items-center gap-8">
+          <div className="flex flex-wrap justify-center  w-full md:w-[30vw] items-center gap-8">
             <h1 className="text-[1.5rem]">Total</h1>
             <h1 className="text-[1.5rem]">$22.00</h1>
           </div>
           <div className="m-4 flex flex-col justify-center">
-          <button className="bg-[#309aac] text-white transition-all w-full px-3 py-2 hover:bg-[#309aac92]  ">
+          <button className="bg-[#ffffff] text-black transition-all w-full px-3 py-2 hover:bg-[#ffffff92]  ">
             Checkout
           </button>
 

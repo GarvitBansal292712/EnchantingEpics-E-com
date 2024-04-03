@@ -1,15 +1,14 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-// import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-
+import { NavLink } from "react-router-dom";
 const navigation = [
-  { name: "Home", href: "#", current: false },
-  { name: "Bookstore", href: "#", current: false },
-  { name: "About", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Home", to: "/", current: false },
+  { name: "Bookstore", to: "/store", current: false },
+  { name: "About", to: "/about", current: false },
+  { name: "Contact", to: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -63,9 +62,9 @@ export default function Example() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <NavLink
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className={classNames(
                           item.current
                             ? "text-[#309aac7a] text-lg text-[#309aac]"
@@ -75,7 +74,7 @@ export default function Example() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -83,14 +82,12 @@ export default function Example() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 {/* SHOPPING CART ICON */}
-                <button
-                  type="button"
+                <NavLink
+                to='/cart'
                   className="relative rounded-full bg-[#e7f1f0] p-1 text-[#309aac] text-lg hover:text-[#309aac7a]  focus:text-[#309aac7a]"
                 >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
                   <FaCartShopping className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </NavLink>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">

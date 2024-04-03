@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -24,19 +25,19 @@ const Footer = () => {
           <h1>Shop</h1>
           <ul>
             <li className="hover:underline mb-[8px]">
-              <a href="">FAQ</a>
+              <NavLink to="/faq">FAQ</NavLink>
             </li>
             {/* Later these anchor tags will be changed according to the react router */}
             <li className="hover:underline mb-[8px]">
-              <a href="">Shipping & Returns</a>
+              <NavLink to="/returns">Shipping & Returns</NavLink>
             </li>
             {/* Later these anchor tags will be changed according to the react router */}
             <li className="hover:underline mb-[8px]">
-              <a href="">Store Policy</a>
+              <NavLink to="/policy">Store Policy</NavLink>
             </li>
             {/* Later these anchor tags will be changed according to the react router */}
             <li className="hover:underline mb-[8px]">
-              <a href="">Payment Methods</a>
+              <NavLink to="/policy">Payment Methods</NavLink>
             </li>
             {/* Later these anchor tags will be changed according to the react router */}
           </ul>
@@ -81,18 +82,18 @@ const Footer = () => {
         <p>© 2024 by Enchanting Epics</p>
         <div className="flex justify-center items-center gap-3">
           <p className="text-center">Created by: Garvit Bansal</p>
-          <a
+          <NavLink
             href="https://github.com/GarvitBansal292712"
             className="hover:text-black"
           >
             <FaGithub />
-          </a>
-          <a
+          </NavLink>
+          <NavLink
             href="https://www.linkedin.com/in/garvit-bansal-777535229/"
             className="hover:text-black"
           >
             <FaLinkedin />
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
