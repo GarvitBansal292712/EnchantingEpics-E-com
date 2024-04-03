@@ -1,14 +1,14 @@
 import React from "react";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import About from "./components/About";
-import Bookstore from "./components/Bookstore";
-import ContactUs from "./components/ContactUs";
-import Cart from "./components/Cart";
-import Faq from "./components/Faq";
-import ShippingReturn from "./components/ShippingReturn";
-import StorePolicy from "./components/StorePolicy";
+import About from "./pages/About";
+import Bookstore from "./pages/Bookstore";
+import ContactUs from "./pages/ContactUs";
+import Cart from "./pages/Cart";
+import Faq from "./pages/Faq";
+import ShippingReturn from "./pages/ShippingReturn";
+import StorePolicy from "./pages/StorePolicy";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -29,7 +29,6 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-      
       
     </>
   );
