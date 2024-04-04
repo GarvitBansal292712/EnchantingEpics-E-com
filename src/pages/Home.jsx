@@ -1,8 +1,15 @@
 import React from "react";
+import ProductData from "../components/ProductData";
 import herofullimg from "../assets/images/herofullimg.jpg";
 import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
 import { NavLink } from "react-router-dom";
+// import design4img from "../assets/images/design4img.jpg";
+
 const Home = () => {
+  // Filter Products for Best seller category
+  const bestsllersProducts = ProductData.filter(
+    (product) => product.category === "bestseller"
+  );
   return (
     <>
       <div className="flex justify-center relative md:mx-11 ">
@@ -24,7 +31,24 @@ const Home = () => {
       <div className="flex flex-col relative justify-center items-center md:mx-11 ">
         <div className="flex justify-center flex-wrap  gap-4 my-5">
           {/* THESE WILL BE DYNAMICALLY LOADED */}
-          <div className="text-center text-white flex flex-col gap-3">
+          {bestsllersProducts.map((product) => (
+            <div key={product.id} className="text-center  text-white flex flex-col gap-3">
+              <a href="">
+              <img
+                src={product.image}
+                alt=""
+                className="w-full md:w-[180px] h-[180px]"
+              />
+              <h1 >{product.name}</h1>
+              <h1>{`$ ${product.price}.00`}</h1>
+              </a>
+              <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+                Add to Cart
+              </button>
+            </div>
+          ))}
+
+          {/* <div className="text-center text-white flex flex-col gap-3">
             <img
               src={InteriorDesignBook}
               alt=""
@@ -83,19 +107,7 @@ const Home = () => {
             <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
               Add to Cart
             </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
+          </div> */}
           {/* THESE WILL BE DYNAMICALLY LOADED */}
         </div>
         <hr className="text-black border-1 border-black w-8 mt-5" />
@@ -190,14 +202,16 @@ const Home = () => {
           MANY BOOKS
         </h1>
         {/* Router REQUIRED */}
-        <NavLink to="/about" className="border-[3px]  border-white bg-none py-2 px-5 cursor-pointer hover:bg-black hover:text-white transition-all ">
+        <NavLink
+          to="/about"
+          className="border-[3px]  border-white bg-none py-2 px-5 cursor-pointer hover:bg-black hover:text-white transition-all "
+        >
           Read Our Story
         </NavLink>
         <hr className="text-black border-1 border-black w-8 mt-11 " />
 
         <div className="bg-[#309aac] h-full w-full top-[120px] -z-10 absolute"></div>
       </div>
-
     </>
   );
 };
