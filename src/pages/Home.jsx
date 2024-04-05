@@ -10,6 +10,11 @@ const Home = () => {
   const bestsllersProducts = ProductData.filter(
     (product) => product.category === "bestseller"
   );
+
+  // Filter Products for Best seller category
+  const bookOftheMonth = ProductData.filter(
+    (product) => product.category === "bookofthemonth"
+  );
   return (
     <>
       <div className="flex justify-center relative md:mx-11 ">
@@ -30,85 +35,29 @@ const Home = () => {
       </h1>
       <div className="flex flex-col relative justify-center items-center md:mx-11 ">
         <div className="flex justify-center flex-wrap  gap-4 my-5">
-          {/* THESE WILL BE DYNAMICALLY LOADED */}
+          {/* THESE PRODUCTS ( BESTSELLER) WILL BE DYNAMICALLY LOADED */}
           {bestsllersProducts.map((product) => (
-            <div key={product.id} className="text-center  text-white flex flex-col gap-3">
-              <a href="">
-              <img
-                src={product.image}
-                alt=""
-                className="w-full md:w-[180px] h-[180px]"
-              />
-              <h1 >{product.name}</h1>
-              <h1>{`$ ${product.price}.00`}</h1>
-              </a>
+            <div
+              key={product.id}
+              className="text-center  text-white flex flex-col gap-3"
+            >
+              <NavLink to="/productinfo">
+                <img
+                  src={product.image}
+                  alt=""
+                  className="w-full md:w-[180px] h-[180px]"
+                />
+                <h1>{product.name}</h1>
+                <h1>{`$ ${product.price}.00`}</h1>
+              </NavLink>
               <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
                 Add to Cart
               </button>
             </div>
           ))}
 
-          {/* <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div> */}
-          {/* THESE WILL BE DYNAMICALLY LOADED */}
+          
+          {/* THESE PRODUCTS ( BESTSELLER) WILL BE DYNAMICALLY LOADED */}
         </div>
         <hr className="text-black border-1 border-black w-8 mt-5" />
         <h1 className="text-center font-extrabold text-[1.2rem] text-[#ffffff] mt-5">
@@ -119,80 +68,25 @@ const Home = () => {
         </h1>
         <hr className="text-black border-1 border-black w-8 " />
         <div className="flex justify-center flex-wrap  gap-4 my-5">
-          {/* THESE WILL BE DYNAMICALLY LOADED */}
-          <div className="text-center text-white flex flex-col gap-3">
+          {/*THESE PRODUCTS ( BOOK OF THE MONTH) WILL BE DYNAMICALLY LOADED*/}
+          {bookOftheMonth.map((product ) => (
+
+        
+          <div key={product.id} className="text-center text-white flex flex-col gap-3">
             <img
-              src={InteriorDesignBook}
+              src={product.image}
               alt=""
               className="w-full md:w-[180px] h-[180px]"
             />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
+            <h1>{product.name}</h1>
+            <h1>{`$ ${product.price}.00`}</h1>
             <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
               Add to Cart
             </button>
           </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          <div className="text-center text-white flex flex-col gap-3">
-            <img
-              src={InteriorDesignBook}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>Collen Hoover</h1>
-            <h1>$22.00</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-          {/* THESE WILL BE DYNAMICALLY LOADED */}
+            ))}
+          
+          {/* THESE PRODUCTS ( BOOK OF THE MONTH) WILL BE DYNAMICALLY LOADED */}
         </div>
         <hr className="text-black border-1 border-black w-8 mt-5" />
 

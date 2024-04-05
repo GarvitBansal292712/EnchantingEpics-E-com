@@ -1,7 +1,55 @@
 import React from "react";
-import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
+import { useState } from "react";
+import ProductData from "../components/ProductData";
 
 const Bookstore = () => {
+  const [typefilter, settypefilter] = useState("All");
+  const [categoryfilter, setcategoryfilter] = useState("All");
+const [price, setprice] = useState('')
+  // Filter products based on both type and category criteria
+  const filteredProducts = ProductData.filter((product) => {
+    if (typefilter === "All" /* && categoryfilter === 'All' */) {
+      return true; // Show all products if no filters are applied
+    }
+    if (typefilter === "novel") {
+      return product.type === typefilter; // Filter by Novel  only
+    }
+    if (typefilter === "design") {
+      return product.type === typefilter; // Filter by Design only
+    }
+    if (typefilter === "lifestyle") {
+      return product.type === typefilter; // Filter by Lifestyle only
+    }
+    if (typefilter === "travel") {
+      return product.type === typefilter; // Filter by Travel only
+    }
+    if (categoryfilter === "bookofthemonth") {
+      return product.category === categoryfilter; // Filter by BookoftheMonth only
+    }
+    if (categoryfilter === "bestseller") {
+      return product.category === categoryfilter; // Filter by Bestseller only'
+    }
+    // if (price >=20 && price <=30 ) {
+    //   return product.price === price; // Filter by Bestseller only
+    // }
+    return product.type === typefilter && product.category === categoryfilter; // Filter by both type and category
+  });
+
+  const handleClickCategory = (newCategory) => {
+    setcategoryfilter(newCategory);
+  };
+  const handleClickType = (newType) => {
+    settypefilter(newType);
+  };
+  const handleClickPrice = (newPrice) => {
+    setprice(newPrice);
+  };
+
+
+  const handleClearFilters =() =>{
+
+    settypefilter('All')
+  } 
   return (
     <>
       <div className="flex flex-col  md:flex md:flex-row">
@@ -36,26 +84,47 @@ const Bookstore = () => {
               </summary>
 
               <div className="flex gap-3 p-4 flex-wrap justify-center items-center md:flex md:flex-col md:flex-start">
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickType("All")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] p-1 hover:text-white border-r-2 border-black pr-2 md:border-none"
+                >
                   All
                 </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickType("novel")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
                   Novels
                 </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickType("design")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
                   Design et Art
                 </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickType("lifestyle")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
                   Life Style
                 </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickType("travel")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
+                  Travel guides
+                </button>
+                <button
+                  onClick={() => handleClickCategory("bookofthemonth")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
                   Books of the month
                 </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
+                <button
+                  onClick={() => handleClickCategory("bestseller")}
+                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                >
                   Bestsellers
-                </button>
-                <button className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none">
-                  Travel guides
                 </button>
               </div>
             </details>
@@ -99,7 +168,7 @@ const Bookstore = () => {
                 </div>
                 <div className="flex gap-2">
                   <label htmlFor="price20to30">
-                    <input type="radio" name="price" id="price20to30" />
+                    <input type="radio" onChange={()=>handleClickPrice(price >=20 && price <=30)} name="price" id="price20to30" />
                     $20 - $30
                   </label>
                 </div>
@@ -111,6 +180,14 @@ const Bookstore = () => {
                 </div>
               </div>
             </details>
+            <div className="flex justify-center">
+              <button
+                onClick={handleClearFilters}
+                className="bg-none text-[#309aac] hover:text-[#295c65]  pr-2 md:border-none"
+              >
+                Clear Filters X
+              </button>
+            </div>
           </div>
         </div>
         <div className="flex flex-col justify-center w-full">
@@ -122,7 +199,25 @@ const Bookstore = () => {
           </h1>
           <div className="flex justify-center flex-wrap  gap-10 my-5">
             {/* THESE WILL BE DYNAMICALLY LOADED */}
-            <div className="text-center text-black flex flex-col gap-3">
+            {filteredProducts.map((product) => (
+              <div
+                key={product.id}
+                className="text-center text-black flex flex-col gap-3"
+              >
+                <img
+                  src={product.image}
+                  alt=""
+                  className="w-full rounded-lg  md:w-[223px] h-[223px] "
+                />
+                <h1>{product.name}</h1>
+                <h1>{`$ ${product.price}.00`}</h1>
+                <button className="border-[3px] w-full rounded-lg  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+
+            {/* <div className="text-center text-black flex flex-col gap-3">
               <img
                 src={InteriorDesignBook}
                 alt=""
@@ -205,19 +300,7 @@ const Bookstore = () => {
               <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
                 Add to Cart
               </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
+            </div> */}
             {/* THESE WILL BE DYNAMICALLY LOADED */}
           </div>
         </div>

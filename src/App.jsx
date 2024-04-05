@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ProductPage from "./components/ProductPage";
 import About from "./pages/About";
 import Bookstore from "./pages/Bookstore";
 import ContactUs from "./pages/ContactUs";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/returns" element={<ShippingReturn/>} />
           <Route path="/faq" element={<Faq/>} />
           <Route path="/policy" element={<StorePolicy/>} />
+          <Route path="/productinfo" element={<ProductPage/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
