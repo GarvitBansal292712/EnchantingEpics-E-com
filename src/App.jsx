@@ -27,7 +27,8 @@ function App() {
           <Route path="/returns" element={<ShippingReturn/>} />
           <Route path="/faq" element={<Faq/>} />
           <Route path="/policy" element={<StorePolicy/>} />
-          <Route path="/productinfo" element={<ProductPage/>} />
+          <Route path="/product/:productId" element={<ProductPage/>}/>
+ 
         </Routes>
         <Footer />
       </BrowserRouter>

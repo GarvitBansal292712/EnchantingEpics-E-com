@@ -41,7 +41,7 @@ const Home = () => {
               key={product.id}
               className="text-center  text-white flex flex-col gap-3"
             >
-              <NavLink to="/productinfo">
+              <NavLink to={`/product/${product.id}`}>
                 <img
                   src={product.image}
                   alt=""

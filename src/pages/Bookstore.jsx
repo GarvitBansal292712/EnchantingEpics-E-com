@@ -1,16 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import ProductData from "../components/ProductData";
-
+import { Link, NavLink } from "react-router-dom";
 const Bookstore = () => {
   const [typefilter, settypefilter] = useState("All");
   const [categoryfilter, setcategoryfilter] = useState("All");
-const [price, setprice] = useState('')
+
   // Filter products based on both type and category criteria
   const filteredProducts = ProductData.filter((product) => {
+
     if (typefilter === "All" /* && categoryfilter === 'All' */) {
       return true; // Show all products if no filters are applied
     }
+    
     if (typefilter === "novel") {
       return product.type === typefilter; // Filter by Novel  only
     }
@@ -21,17 +23,14 @@ const [price, setprice] = useState('')
       return product.type === typefilter; // Filter by Lifestyle only
     }
     if (typefilter === "travel") {
-      return product.type === typefilter; // Filter by Travel only
+      return product.type === typefilter; // Filter by Lifestyle only
     }
     if (categoryfilter === "bookofthemonth") {
       return product.category === categoryfilter; // Filter by BookoftheMonth only
     }
     if (categoryfilter === "bestseller") {
-      return product.category === categoryfilter; // Filter by Bestseller only'
+      return product.category === categoryfilter; // Filter by Bestseller only
     }
-    // if (price >=20 && price <=30 ) {
-    //   return product.price === price; // Filter by Bestseller only
-    // }
     return product.type === typefilter && product.category === categoryfilter; // Filter by both type and category
   });
 
@@ -41,15 +40,7 @@ const [price, setprice] = useState('')
   const handleClickType = (newType) => {
     settypefilter(newType);
   };
-  const handleClickPrice = (newPrice) => {
-    setprice(newPrice);
-  };
 
-
-  const handleClearFilters =() =>{
-
-    settypefilter('All')
-  } 
   return (
     <>
       <div className="flex flex-col  md:flex md:flex-row">
@@ -86,43 +77,43 @@ const [price, setprice] = useState('')
               <div className="flex gap-3 p-4 flex-wrap justify-center items-center md:flex md:flex-col md:flex-start">
                 <button
                   onClick={() => handleClickType("All")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] p-1 hover:text-white border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   All
                 </button>
                 <button
                   onClick={() => handleClickType("novel")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Novels
                 </button>
                 <button
                   onClick={() => handleClickType("design")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Design et Art
                 </button>
                 <button
                   onClick={() => handleClickType("lifestyle")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Life Style
                 </button>
                 <button
                   onClick={() => handleClickType("travel")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Travel guides
                 </button>
                 <button
                   onClick={() => handleClickCategory("bookofthemonth")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Books of the month
                 </button>
                 <button
                   onClick={() => handleClickCategory("bestseller")}
-                  className="focus:text-white  focus:bg-[#295c65] bg-none rounded-lg text-[#309aac] hover:bg-[#295c65] hover:text-white p-1 border-r-2 border-black pr-2 md:border-none"
+                  className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   Bestsellers
                 </button>
@@ -168,7 +159,7 @@ const [price, setprice] = useState('')
                 </div>
                 <div className="flex gap-2">
                   <label htmlFor="price20to30">
-                    <input type="radio" onChange={()=>handleClickPrice(price >=20 && price <=30)} name="price" id="price20to30" />
+                    <input type="radio" name="price" id="price20to30" />
                     $20 - $30
                   </label>
                 </div>
@@ -182,7 +173,7 @@ const [price, setprice] = useState('')
             </details>
             <div className="flex justify-center">
               <button
-                onClick={handleClearFilters}
+                onClick={() => handleClickType("All")}
                 className="bg-none text-[#309aac] hover:text-[#295c65]  pr-2 md:border-none"
               >
                 Clear Filters X
@@ -201,9 +192,10 @@ const [price, setprice] = useState('')
             {/* THESE WILL BE DYNAMICALLY LOADED */}
             {filteredProducts.map((product) => (
               <div
-                key={product.id}
-                className="text-center text-black flex flex-col gap-3"
+              key={product.id}
+              className="text-center text-black flex flex-col gap-3"
               >
+                <NavLink to={`/product/${product.id}`}> 
                 <img
                   src={product.image}
                   alt=""
@@ -211,6 +203,7 @@ const [price, setprice] = useState('')
                 />
                 <h1>{product.name}</h1>
                 <h1>{`$ ${product.price}.00`}</h1>
+                </NavLink>
                 <button className="border-[3px] w-full rounded-lg  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
                   Add to Cart
                 </button>
