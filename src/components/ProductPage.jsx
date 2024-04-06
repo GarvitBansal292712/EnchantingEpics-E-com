@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 const ProductPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
+  const [quantity, setQuantity] = useState(1)
   useEffect(() => {
 
     const productInformation = ProductData.find(
@@ -74,8 +75,9 @@ const ProductPage = () => {
           <input
             type="number"
             name=""
-            value={1}
+            value={quantity}
             id=""
+            onChange={(e)=> setQuantity(e.target.value)}
             className="border-[1px] border-[#00000096] p-2 w-[6rem]"
           />
           <button className="bg-[#309aac] p-3 hover:bg-[#309aac90]">

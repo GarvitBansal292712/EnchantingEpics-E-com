@@ -87,6 +87,8 @@ export default function Example() {
                   className="relative rounded-full bg-[#e7f1f0] p-1 text-[#309aac] text-lg hover:text-[#309aac7a]  focus:text-[#309aac7a]"
                 >
                   <FaCartShopping className="h-6 w-6" aria-hidden="true" />
+                  {/* This is going to be dynamically updated */}
+                  <h1 className="absolute top-[-10px] left-3  text-black font-bold" >1</h1>
                 </NavLink>
 
                 {/* Profile dropdown */}

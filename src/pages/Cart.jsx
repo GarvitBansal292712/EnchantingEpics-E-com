@@ -1,6 +1,5 @@
 import React from "react";
 import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
-import { FaLock } from "react-icons/fa";
 const Cart = () => {
   return (
     <>
@@ -11,18 +10,19 @@ const Cart = () => {
           <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
             My Cart
           </h1>
+          {/* THIS WILL BE DYNAMICALLY LOADED  */}
           <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-[#309aac] border-y-2 my-2 p-3 border-[#cfd6de]">
             {/*  Image of the Product */}
             <img
-              src={InteriorDesignBook}
+              src={`InteriorDesignBook`}
               alt=""
               className="w-[100px] h-[100px]"
             />
             <div className="flex flex-col">
               {/* Name of the product */}
-              <h1>Interior Design Book</h1>
+              <h1>{`Interior Design Book`}</h1>
               {/* Cost of the product */}
-              <h1>$22.00</h1>
+              <h1>{``}</h1>
             </div>
             {/* Qunatity of the product */}
 
@@ -41,20 +41,22 @@ const Cart = () => {
               </button>
             </div>
           </div>
-          <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-[#309aac] border-y-2 my-2 p-3 border-[#cfd6de]">
-            {/*  Image of the Product */}
+          {/* THIS WILL BE DYNAMICALLY LOADED  */}
+          
+          {/* <div className="flex justify-evenly w-full md:w-[40vw] items-center gap-8 flex-wrap bg-[#309aac] border-y-2 my-2 p-3 border-[#cfd6de]">
+
             <img
               src={InteriorDesignBook}
               alt=""
               className="w-[100px] h-[100px]"
             />
             <div className="flex flex-col">
-              {/* Name of the product */}
+
               <h1>Interior Design Book</h1>
-              {/* Cost of the product */}
+       
               <h1>$22.00</h1>
             </div>
-            {/* Qunatity of the product */}
+          
 
             <input
               type="number"
@@ -64,13 +66,13 @@ const Cart = () => {
               className="border-[1px] text-black border-[#00000096] p-2  w-[4rem]"
             />
 
-            {/* Delete Button */}
+            
             <div className="flex gap-2">
               <button className="bg-[#309aac] text-white p-1 rounded-md transition-all hover:bg-[#ffffff] hover:text-[#309aac]">
                 Delete{" "}
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* Order Summary */}
         <div className="flex flex-col justify-center text-white w-full md:w-[30vw] bg-[#309aac] p-2">

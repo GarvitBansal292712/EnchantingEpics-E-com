@@ -56,7 +56,6 @@ const Home = () => {
             </div>
           ))}
 
-          
           {/* THESE PRODUCTS ( BESTSELLER) WILL BE DYNAMICALLY LOADED */}
         </div>
         <hr className="text-black border-1 border-black w-8 mt-5" />
@@ -69,23 +68,26 @@ const Home = () => {
         <hr className="text-black border-1 border-black w-8 " />
         <div className="flex justify-center flex-wrap  gap-4 my-5">
           {/*THESE PRODUCTS ( BOOK OF THE MONTH) WILL BE DYNAMICALLY LOADED*/}
-          {bookOftheMonth.map((product ) => (
+          {bookOftheMonth.map((product) => (
+            <div
+              key={product.id}
+              className="text-center text-white flex flex-col gap-3"
+            >
+              <NavLink to={`/product/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt=""
+                  className="w-full md:w-[180px] h-[180px]"
+                />
+                <h1>{product.name}</h1>
+                <h1>{`$ ${product.price}.00`}</h1>
+              </NavLink>
+              <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+                Add to Cart
+              </button>
+            </div>
+          ))}
 
-        
-          <div key={product.id} className="text-center text-white flex flex-col gap-3">
-            <img
-              src={product.image}
-              alt=""
-              className="w-full md:w-[180px] h-[180px]"
-            />
-            <h1>{product.name}</h1>
-            <h1>{`$ ${product.price}.00`}</h1>
-            <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-              Add to Cart
-            </button>
-          </div>
-            ))}
-          
           {/* THESE PRODUCTS ( BOOK OF THE MONTH) WILL BE DYNAMICALLY LOADED */}
         </div>
         <hr className="text-black border-1 border-black w-8 mt-5" />
