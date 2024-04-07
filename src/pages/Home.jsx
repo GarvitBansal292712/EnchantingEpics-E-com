@@ -1,8 +1,12 @@
 import React from "react";
 import ProductData from "../components/ProductData";
 import herofullimg from "../assets/images/herofullimg.jpg";
-import InteriorDesignBook from "../assets/images/InteriorDesignBook.jpg";
 import { NavLink } from "react-router-dom";
+import { addToCart } from "../components/cartLogic";
+
+const handleAddtoCart = (product) => {
+  addToCart(product);
+};
 // import design4img from "../assets/images/design4img.jpg";
 
 const Home = () => {
@@ -50,7 +54,10 @@ const Home = () => {
                 <h1>{product.name}</h1>
                 <h1>{`$ ${product.price}.00`}</h1>
               </NavLink>
-              <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+              <button
+                onClick={() => handleAddtoCart(product, 1)}
+                className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all "
+              >
                 Add to Cart
               </button>
             </div>
@@ -82,7 +89,7 @@ const Home = () => {
                 <h1>{product.name}</h1>
                 <h1>{`$ ${product.price}.00`}</h1>
               </NavLink>
-              <button className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+              <button  onClick={()=>handleAddtoCart(product, 1)} className="border-[3px] w-full  border-white bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
                 Add to Cart
               </button>
             </div>

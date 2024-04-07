@@ -2,6 +2,14 @@ import React from "react";
 import { useState } from "react";
 import ProductData from "../components/ProductData";
 import { Link, NavLink } from "react-router-dom";
+import { addToCart } from "../components/cartLogic";
+
+
+const handleAddtoCart = (product) => {
+  addToCart(product);
+};
+
+
 const Bookstore = () => {
   const [typefilter, settypefilter] = useState("All");
   const [categoryfilter, setcategoryfilter] = useState("All");
@@ -9,10 +17,6 @@ const Bookstore = () => {
   // Filter products based on both type and category criteria
   const filteredProducts = ProductData.filter((product) => {
 
-    if (typefilter === "All" /* && categoryfilter === 'All' */) {
-      return true; // Show all products if no filters are applied
-    }
-    
     if (typefilter === "novel") {
       return product.type === typefilter; // Filter by Novel  only
     }
@@ -76,7 +80,7 @@ const Bookstore = () => {
 
               <div className="flex gap-3 p-4 flex-wrap justify-center items-center md:flex md:flex-col md:flex-start">
                 <button
-                  onClick={() => handleClickType("All")}
+                 onClick={() => { settypefilter("All"); setcategoryfilter("All"); }}
                   className="bg-none text-[#309aac] hover:text-[#295c65] border-r-2 border-black pr-2 md:border-none"
                 >
                   All
@@ -192,109 +196,28 @@ const Bookstore = () => {
             {/* THESE WILL BE DYNAMICALLY LOADED */}
             {filteredProducts.map((product) => (
               <div
-              key={product.id}
-              className="text-center text-black flex flex-col gap-3"
+                key={product.id}
+                className="text-center text-black flex flex-col gap-3"
               >
-                <NavLink to={`/product/${product.id}`}> 
-                <img
-                  src={product.image}
-                  alt=""
-                  className="w-full rounded-lg  md:w-[223px] h-[223px] "
-                />
-                <h1>{product.name}</h1>
-                <h1>{`$ ${product.price}.00`}</h1>
+                <NavLink to={`/product/${product.id}`}>
+                  <img
+                    src={product.image}
+                    alt=""
+                    className="w-full rounded-lg  md:w-[223px] h-[223px] "
+                  />
+                  <h1>{product.name}</h1>
+                  <h1>{`$ ${product.price}.00`}</h1>
                 </NavLink>
-                <button className="border-[3px] w-full rounded-lg  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
+                <button
+                  onClick={()=>handleAddtoCart(product, 1)}
+                  className="border-[3px] w-full rounded-lg  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all "
+                >
                   Add to Cart
                 </button>
               </div>
             ))}
 
-            {/* <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div>
-            <div className="text-center text-black flex flex-col gap-3">
-              <img
-                src={InteriorDesignBook}
-                alt=""
-                className="w-full md:w-[223px] h-[223px]"
-              />
-              <h1>Collen Hoover</h1>
-              <h1>$22.00</h1>
-              <button className="border-[3px] w-full  border-black bg-none p-2  hover:bg-black hover:text-white hover:border-none transition-all ">
-                Add to Cart
-              </button>
-            </div> */}
-            {/* THESE WILL BE DYNAMICALLY LOADED */}
+            
           </div>
         </div>
       </div>
