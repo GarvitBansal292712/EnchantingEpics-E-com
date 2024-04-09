@@ -7,14 +7,14 @@ const About = () => {
             <div className=" w-full md:w-[50vw]">
             <img src={aboutimg} alt="" />
             </div>
-            <div className="bg-[#e7f1f0] p-3">
-            <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
+            <div className="bg-[#FFFDD0] p-3">
+            <h1 className="text-center font-thin text-[1.2rem] text-[#734F96] mt-[34px]">
                 Our
             </h1>
-            <h1 className="text-center font-extrabold font-serif text-[#309aac] text-[3rem] mb-5 ">
+            <h1 className="text-center font-extrabold font-serif text-[#734F96] text-[3rem] mb-5 ">
                 Story
             </h1>
-            <p className="text-center  text-[#309aac] ">
+            <p className="text-center  text-[#734F96] ">
                 Enchanting Epics began with a shared passion for literature <br />{" "}
                 among a group of friends, who envisioned creating a welcoming
                 community for <br />

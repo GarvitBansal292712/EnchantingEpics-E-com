@@ -1,11 +1,10 @@
 import React from "react";
 import ProductData from "../components/ProductData";
 import herofullimg from "../assets/images/herofullimg.jpg";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { addToCart } from "../components/cartLogic";
 import {useTemporaryMessage} from "../components/addToCartMessage";
 
-// import design4img from "../assets/images/design4img.jpg";
 
 const Home = () => {
   const [message, setMessage] = useTemporaryMessage();
@@ -28,10 +27,10 @@ const Home = () => {
   return (
     <>
     {message && (
-        <div className="flex justify-center absolute top-0 left-0 w-full z-50">
+        <div className="flex justify-center absolute top-50 left-50 w-full z-50">
           <div
             role="alert"
-            className=" backdrop-blur-md rounded-xl border transition-all  p-4  flex justify-center items-center w-[20vw] "
+            className=" backdrop-blur-md rounded-xl border transition-all  p-4  flex justify-center items-center w-[50vw] "
           >
             <div className="flex items-start gap-4">
               <span className="text-green-600">
@@ -64,7 +63,7 @@ const Home = () => {
       <div className="flex justify-center relative md:mx-11 ">
         <img src={herofullimg} alt="" className="" />
         <div className="z-10 absolute inset-0  flex justify-start items-center ml-12 py-2">
-          <h1 className="text-blue-800 leading-normal font-serif font-extrabold text-[1.3rem] md:text-[3rem] lg:text-[4.2rem]">
+          <h1 className="text-[#734F96] leading-normal font-serif font-extrabold text-[1.3rem] md:text-[3rem] lg:text-[4.2rem]">
             A SOFA, <br />
             A GOOD <br /> BOOK, <br />
             AND YOU.
@@ -85,7 +84,7 @@ const Home = () => {
               key={product.id}
               className="text-center  text-white flex flex-col gap-3"
             >
-              <NavLink to={`/product/${product.id}`}>
+              <Link to={`/product/${product.id}`}>
                 <img
                   src={product.image}
                   alt=""
@@ -93,7 +92,7 @@ const Home = () => {
                 />
                 <h1>{product.name}</h1>
                 <h1>{`$ ${product.price}.00`}</h1>
-              </NavLink>
+              </Link>
               <button
                 onClick={() => handleAddtoCart(product, 1)}
                 className=" w-full rounded-lg  text-white bg-[#a985cd] p-2 hover:bg-[#4f2d70]  transition-all "
@@ -120,7 +119,7 @@ const Home = () => {
               key={product.id}
               className="text-center text-white flex flex-col gap-3"
             >
-              <NavLink to={`/product/${product.id}`}>
+              <Link to={`/product/${product.id}`}>
                 <img
                   src={product.image}
                   alt=""
@@ -128,7 +127,7 @@ const Home = () => {
                 />
                 <h1>{product.name}</h1>
                 <h1>{`$ ${product.price}.00`}</h1>
-              </NavLink>
+              </Link>
               <button  onClick={()=>handleAddtoCart(product, 1)} className=" w-full rounded-lg  text-white bg-[#a985cd] p-2 hover:bg-[#4f2d70]  transition-all ">
                 Add to Cart
               </button>
@@ -145,12 +144,12 @@ const Home = () => {
           MANY BOOKS
         </h1>
         {/* Router REQUIRED */}
-        <NavLink
+        <Link
           to="/about"
           className=" rounded-lg  text-white bg-[#a985cd] p-2 hover:bg-[#4f2d70]  transition-all "
         >
           Read Our Story
-        </NavLink>
+        </Link>
         <hr className="text-white border-1 border-white w-8 mt-11 mb-5" />
 
         <div className="bg-[#734F96] h-full w-full top-[120px] -z-10 absolute"></div>

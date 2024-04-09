@@ -5,7 +5,6 @@ import { FaCartShopping } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
-
 const navigation = [
   { name: "Home", to: "/", current: false },
   { name: "Bookstore", to: "/store", current: false },
@@ -17,7 +16,6 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-
 export default function Example() {
   return (
     <Disclosure as="nav" className="bg-[#FFFDD0]">
@@ -27,7 +25,7 @@ export default function Example() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-[#309aac] hover:text-[#309aac7a] ">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-[#734F96] hover:text-[#309aac7a] ">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -44,8 +42,8 @@ export default function Example() {
                 {/* E-COM LOGO */}
                 <div className="flex flex-shrink-0 items-center">
                   <span
-                    className="text-xl font-bold"
-                    style={{ color: "#309aac" }}
+                    className="text-xl font-bold text-black"
+                    
                   >
                     E
                   </span>
@@ -53,8 +51,8 @@ export default function Example() {
                     nchanting
                   </span>
                   <span
-                    className="text-xl font-bold"
-                    style={{ color: "#309aac" }}
+                    className="text-xl font-bold text-black"
+                    
                   >
                     E
                   </span>
@@ -92,9 +90,9 @@ export default function Example() {
                   {/* This is going to be dynamically updated */}
 
                   <h1 className="absolute top-[-10px] left-3  text-black font-bold">
-{/*                   {cart.reduce((total, item) => total + item.quantity, 0)}
- */}                  </h1>
-  
+                    {/*                   {cart.reduce((total, item) => total + item.quantity, 0)}
+                     */}{" "}
+                  </h1>
                 </NavLink>
 
                 {/* Profile dropdown */}
@@ -171,8 +169,8 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "hover:text-[#309aac7a] text-[#309aac] "
-                      : "text-[#309aac]  hover:text-[#309aac7a]  text-center text-[25px]",
+                      ? "hover:text-[#734F96] text-[#734F96] "
+                      : "text-[#734F96]  hover:text-[#734F96]  text-center text-[25px]",
                     "block  rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}

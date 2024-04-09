@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set the color of the scrollbar track */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  /* Set the color of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #734F96; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners of the scrollbar thumb */
+  }
+  
+  /* Set the color of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color, #fff); /* Color of the scrollbar track */
+  }
+  
+  /* Set the color of the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4f2d70; /* Color of the scrollbar thumb on hover */
+  }
+  
+  /* Set the color of the scrollbar thumb when actively scrolling */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #9165be; /* Color of the scrollbar thumb when actively scrolling */
+  }
+  

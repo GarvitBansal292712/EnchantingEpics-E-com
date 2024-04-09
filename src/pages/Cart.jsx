@@ -1,6 +1,7 @@
 import React from "react";
 import { updateCart, getCart } from "../components/cartData";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const [cart, setCart] = useState([]); // State to store cart items
   const [subtotal, setSubtotal] = useState(0);
@@ -51,6 +52,20 @@ const Cart = () => {
       // Update cart data in local storage
       updateCart(updatedCart);
     }
+
+  };
+  const deleteFromCart = (productId) => {
+    // Get the current cart
+    const currentCart = getCart();
+
+    // Filter out the item to be deleted
+    const updatedCart = currentCart.filter((item) => item.id !== productId);
+
+    // Update the cart in local storage
+    updateCart(updatedCart);
+
+    // Update the cart state
+    setCart(updatedCart);
   };
   return (
     <>
@@ -92,7 +107,10 @@ const Cart = () => {
 
                 {/* Delete Button */}
                 <div className="flex gap-2 justify-center">
-                  <button className="bg-[#734F96] text-white p-2 rounded-md transition-all hover:bg-[#8d6fac] hover:text-[#ffffff]">
+                  <button
+                    onClick={() => deleteFromCart(item.id)}
+                    className="bg-[#734F96] text-white p-2 rounded-md transition-all hover:bg-[#8d6fac] hover:text-[#ffffff]"
+                  >
                     Delete{" "}
                   </button>
                 </div>
@@ -116,16 +134,19 @@ const Cart = () => {
               <h1 className="text-[1.5rem]">{`$${calculateTotal(cart)}.00`}</h1>
             </div>
             <div className="m-4 flex flex-col justify-center">
-              <button className="bg-[#ffffff] text-[#734F96] transition-all w-full px-3 py-2 hover:bg-[#b3a0c6] hover:text-[#ffffff]  ">
-                Checkout
-              </button>
+              <Link to="/Checkout">
+                <button className="bg-[#ffffff] text-[#734F96] transition-all w-full px-3 py-2 hover:bg-[#b3a0c6] hover:text-[#ffffff]  ">
+                  Checkout
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       ) : (
         <div className="flex items-center justify-center h-[50vh]">
-          
-         <h1 className="text-center font-extrabold font-serif text-[#000000] text-[1.5rem] mb-5 ">Your Cart is Empty!</h1>
+          <h1 className="text-center font-extrabold font-serif text-[#000000] text-[1.5rem] mb-5 ">
+            Your Cart is Empty!
+          </h1>
         </div>
       )}
     </>

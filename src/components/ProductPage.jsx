@@ -3,14 +3,14 @@ import ProductData from "./ProductData";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { addToCart } from "./cartLogic";
-
-
+import { Link } from "react-router-dom";
+import { useTemporaryMessage } from "../components/addToCartMessage";
 
 const ProductPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState("");
   const [quantity, setQuantity] = useState(1);
-
+  const [message, setMessage] = useTemporaryMessage();
 
   useEffect(() => {
     const productInformation = ProductData.find(
@@ -22,28 +22,62 @@ const ProductPage = () => {
 
   const handleAddtoCart = () => {
     addToCart(product, quantity);
+    setMessage("Item added to cart!");
   };
 
   return (
     <>
+      {message && (
+        <div className="flex justify-center absolute top-50 left-50 w-full z-50">
+          <div
+            role="alert"
+            className=" backdrop-blur-md rounded-xl border transition-all  p-4  flex justify-center items-center md:w-[50vw]"
+          >
+            <div className="flex items-start gap-4">
+              <span className="text-green-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </span>
+
+              <div className="flex-1">
+                <strong className="block font-medium text-black ">
+                  {" "}
+                  {message}{" "}
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="flex justify-center gap-6 flex-wrap mx-6 my-11 items-center">
         <div className="flex flex-col justify-center gap-8 pt-4 ">
           {/* This image will be dynamically loaded  */}
 
           <img src={product.image} alt="" className=" w-full  md:w-[500px] " />
-          <p className="text-[#309aac] md:w-[500px] ">
+          <p className="text-[#734F96] md:w-[500px] ">
             {/* This descrption will be dynamically loaded  */}
-            {`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
-assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequuntur autem perspiciatis quas ipsa tenetur eveniet?`}
+            {product.description}
           </p>
         </div>
         <div className="flex flex-col justify-center gap-2 w-full md:w-[30vw]">
           {/* Product Name will be dynamically loaded */}
-          <h1 className="text-[#309aac] font-thin text-[1.5rem]">
+          <h1 className="text-[#734F96] font-thin text-[1.5rem]">
             {product.name}
           </h1>
           {/* Product Price will be dynamically loaded */}
-          <h1 className="text-[#309aac] font-thin text-[1.5rem]">{`$ ${product.price}.00`}</h1>
+          <h1 className="text-[#734F96] font-thin text-[1.5rem]">{`$ ${product.price}.00`}</h1>
           {/* Quantity Input */}
           <label htmlFor="">Quantity</label>
           <input
@@ -57,13 +91,15 @@ assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequunt
           />
           <button
             onClick={handleAddtoCart}
-            className="bg-[#309aac] p-3 hover:bg-[#309aac90]"
+            className="bg-[#734F96] p-3 hover:bg-[#b396d0] text-white "
           >
             Add To Cart
           </button>
-          <button className="bg-[#414141] text-white p-3 hover:bg-[#41414189]">
-            Buy Now
-          </button>
+          <Link to="/checkout">
+            <button className="bg-[#414141] text-white p-3 w-full hover:bg-[#41414189]">
+              Buy Now
+            </button>
+          </Link>
           <div className="flex flex-col justify-center  ">
             {/* ABOUT INFO OF THE PRODUCT INCLUDING SHIPPING AND RETURNS */}
             <div className="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white">
@@ -108,10 +144,7 @@ assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequunt
                 {/* This descrption will be dynamically loaded  */}
 
                 <p className="mt-4 leading-relaxed text-gray-700">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-                  hic veritatis molestias culpa in, recusandae laboriosam neque
-                  aliquid libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  {product.description}
                 </p>
               </details>
 
@@ -155,10 +188,28 @@ assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequunt
                 </summary>
 
                 <p className="mt-4 leading-relaxed text-gray-700">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-                  hic veritatis molestias culpa in, recusandae laboriosam neque
-                  aliquid libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  We offer a 30-day satisfaction guarantee on all purchases. If
+                  you are not completely satisfied with your product, you may
+                  return it within 30 days of delivery for a full refund or
+                  exchange. <br />
+                  <span className="font-bold">Eligibility Criteria:</span>{" "}
+                  <br />
+                  The item must be unused and in its original condition.
+                  <br />
+                  It must be returned in its original packaging.
+                  <br />
+                  Please note that certain items may not be eligible for return
+                  due to hygiene or safety reasons.
+                  <br />
+                  <span className="font-bold">Initiating a Return:</span>
+                  <br />
+                  To initiate a return, please contact our customer service team
+                  within 30 days of receiving your order. Our team will provide
+                  you with instructions on returning your item. <br />
+                  <span className="font-bold">Refund Process: </span>
+                  <br />
+                  Once your return is received and inspected, we will process
+                  your refund or exchange promptly. <br />
                 </p>
               </details>
               <details className="group p-6 [&_summary::-webkit-details-marker]:hidden">
@@ -199,10 +250,16 @@ assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequunt
                 </summary>
 
                 <p className="mt-4 leading-relaxed text-gray-700">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-                  hic veritatis molestias culpa in, recusandae laboriosam neque
-                  aliquid libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  <span className="font-bold">Processing Time:</span> 1-3
+                  business days <br />
+                  <span className="font-bold">Shipping Methods:</span> Standard
+                  shipping available <br />
+                  <span className="font-bold">Shipping Rates:</span> Calculated
+                  based on weight and address <br />
+                  <span className="font-bold">Confirmation:</span> Receive
+                  tracking information via email <br />
+                  <span className="font-bold">Shipping Regions:</span> Currently
+                  ship within the United States <br />
                 </p>
               </details>
             </div>

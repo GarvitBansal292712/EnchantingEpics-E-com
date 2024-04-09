@@ -10,8 +10,8 @@ import Cart from "./pages/Cart";
 import Faq from "./pages/Faq";
 import ShippingReturn from "./pages/ShippingReturn";
 import StorePolicy from "./pages/StorePolicy";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CurrentlyClosed from "./pages/CurrentlyClosed";
 
 function App() {
   return (
@@ -27,8 +27,9 @@ function App() {
           <Route path="/returns" element={<ShippingReturn/>} />
           <Route path="/faq" element={<Faq/>} />
           <Route path="/policy" element={<StorePolicy/>} />
+          <Route path="/Checkout" element={ <CurrentlyClosed />} />
           <Route path="/product/:productId" element={<ProductPage/>}/>
- 
+
         </Routes>
         <Footer />
       </BrowserRouter>
