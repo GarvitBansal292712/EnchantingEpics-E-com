@@ -23,3 +23,4 @@ export const addToCart = (product, quantity = 1) => {
   //Log the updated cart
   console.log("Updated Cart:", cart);
 };
+

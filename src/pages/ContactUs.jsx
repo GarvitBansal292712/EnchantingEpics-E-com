@@ -5,19 +5,19 @@ import { FaInstagram } from "react-icons/fa";
 const ContactUs = () => {
   return (
     <>
-      <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
+      <h1 className="text-center font-thin text-[1.2rem] text-[#734F96] mt-[34px]">
         For More Info
       </h1>
-      <h1 className="text-center font-extrabold font-serif text-[#309aac] text-[3rem] mb-5 ">
+      <h1 className="text-center font-extrabold font-serif text-[#734F96] text-[3rem] mb-5 ">
         CONTACT US
       </h1>
       {/* CONTACT US MAIN CONTAINER */}
       <div className="flex justify-center flex-col  mb-[120px]  md:mx-[120px] ">
         {/* CONTACT US Body Container   */}
-        <div className="flex justify-evenly border-[15px] bg-white border-[#e7f1f0] p-10 flex-wrap  ">
+        <div className="flex justify-evenly border-[15px] bg-white border-[#a68bc1] p-10 flex-wrap  ">
           {/* First Address Lane  */}
-          <div className="text-[#309aac] text-center flex flex-col gap-3 border-b-2 border-[#e7f1f0] p-2">
-            <h1 className="text-center font-bold text-[1.4rem] text-[#309aac] ">
+          <div className="text-[#734F96] text-center flex flex-col gap-3 border-b-2 border-[#734F96] p-2">
+            <h1 className="text-center font-bold text-[1.4rem] text-[#734F96] ">
               Store 01
             </h1>
             <p className="font-bold">Address:</p>
@@ -35,8 +35,8 @@ const ContactUs = () => {
             <p>garvitbansal2303@gmail.com</p>
           </div>
           {/* Second Address Lane  */}
-          <div className="text-[#309aac] text-center flex flex-col gap-3 border-b-2 border-[#e7f1f0] p-2">
-            <h1 className="text-center font-bold text-[1.4rem] text-[#309aac] ">
+          <div className="text-[#734F96] text-center flex flex-col gap-3 border-b-2 border-[#734F96] p-2">
+            <h1 className="text-center font-bold text-[1.4rem] text-[#734F96] ">
               Store 02
             </h1>
             <p className="font-bold">Address:</p>
@@ -56,8 +56,8 @@ const ContactUs = () => {
             <p>garvitbansal2303@gmail.com</p>
           </div>
           {/* Third Address Lane  */}
-          <div className="text-[#309aac] text-center flex flex-col gap-3 border-b-2 border-[#e7f1f0] p-2">
-            <h1 className="text-center font-bold text-[1.4rem] text-[#309aac] ">
+          <div className="text-[#734F96] text-center flex flex-col gap-3 border-b-2 border-[#734F96] p-2">
+            <h1 className="text-center font-bold text-[1.4rem] text-[#734F96] ">
               Customer service
             </h1>
 
@@ -71,13 +71,13 @@ const ContactUs = () => {
           </div>
         {/* Contact Form Container */}
         <div className="flex items-center justify-between flex-wrap mt-3 md:mx-[59px]">
-          <input type="text" name="" id="" placeholder="Name" className=" w-[30vw] my-2 p-2 border-b-2 border-[#309aac]" />
-          <input type="email" name="" id="" placeholder="Email" className=" w-[30vw] my-2 p-2 border-b-2 border-[#309aac]"/>
-          <textarea name="" id="" cols="30" rows="10" placeholder="Type your message here..." className=" w-full p-2 border-b-2 border-[#309aac]" ></textarea>
+          <input type="text" name="" id="" placeholder="Name" className=" w-[30vw] my-2 p-2 border-b-2 border-[#734F96] focus:outline-none"  />
+          <input type="email" name="" id="" placeholder="Email" className=" w-[30vw] my-2 p-2 border-b-2 border-[#734F96]  focus:outline-none"/>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Type your message here..." className=" w-full p-2 border-b-2 border-[#734F96] focus:outline-none" ></textarea>
 
         </div>
         <div className="m-4">
-          <button className="text-[#309aac] hover:text-[#309aacd2]  ">
+          <button className="text-[#734F96] hover:text-[#826d98]  ">
             Submit
           </button>
         </div>

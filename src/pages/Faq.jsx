@@ -3,24 +3,24 @@ import React from "react";
 const Faq = () => {
   return (
     <>
-      <h1 className="text-center font-thin text-[1.2rem] text-[#309aac] mt-[34px]">
+      <h1 className="text-center font-thin text-[1.2rem] text-[#734F96] mt-[34px]">
         Frequently Asked
       </h1>
-      <h1 className="text-center font-extrabold font-serif text-[#309aac] text-[3rem] mb-5 ">
+      <h1 className="text-center font-extrabold font-serif text-[#734F96] text-[3rem] mb-5 ">
         QUESTIONS
       </h1>
       {/* FAQS MAIN CONTAINER */}
       <div className="flex justify-center flex-col  mb-[120px]  md:mx-[120px] ">
         {/* Font Body Container   */}
-        <div className="flex justify-center flex-col border-[15px] bg-white border-[#e7f1f0] p-10 ">
-          <h1 className="text-[#309aac] text-[1.5rem] font-thin text-center">
+        <div className="flex justify-center flex-col border-[15px] bg-white border-[#7e6696] p-10 ">
+          <h1 className="text-[#734F96] text-[1.5rem] font-thin text-center">
             Frequently asked questions
           </h1>
           {/* FAQ BODY */}
           <div className="flex flex-col justify-center">
             <div className="space-y-4">
               <details
-                className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
                 open
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
@@ -52,7 +52,7 @@ const Faq = () => {
                 </p>
               </details>
               <details
-                className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
                 open
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
@@ -84,7 +84,7 @@ const Faq = () => {
                 </p>
               </details>
               <details
-                className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
                 open
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
@@ -116,7 +116,7 @@ const Faq = () => {
                 </p>
               </details>
               <details
-                className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
                 open
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
@@ -148,7 +148,7 @@ const Faq = () => {
                 </p>
               </details>
               <details
-                className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
                 open
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
@@ -180,7 +180,7 @@ const Faq = () => {
                 </p>
               </details>
 
-              <details className="group border-s-4 border-[#309aac]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+              <details className="group border-s-4 border-[#734F96]  bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h2 className="text-lg  text-gray-900 font-thin">
                     Lorem ipsum dolor sit amet consectetur adipisicing?

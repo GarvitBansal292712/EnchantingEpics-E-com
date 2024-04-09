@@ -4,6 +4,8 @@ import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+
+
 const navigation = [
   { name: "Home", to: "/", current: false },
   { name: "Bookstore", to: "/store", current: false },
@@ -15,9 +17,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-[#e7f1f0]">
+    <Disclosure as="nav" className="bg-[#FFFDD0]">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -67,8 +70,8 @@ export default function Example() {
                         to={item.to}
                         className={classNames(
                           item.current
-                            ? "text-[#309aac7a] text-lg text-[#309aac]"
-                            : "text-[#309aac] text-lg hover:text-[#309aac7a]",
+                            ? "text-[#734F96] text-lg "
+                            : "text-[#734F96] text-lg hover:text-[#309aac7a]",
                           "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -80,15 +83,18 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
                 {/* SHOPPING CART ICON */}
                 <NavLink
-                to='/cart'
-                  className="relative rounded-full bg-[#e7f1f0] p-1 text-[#309aac] text-lg hover:text-[#309aac7a]  focus:text-[#309aac7a]"
+                  to="/cart"
+                  className="relative rounded-full bg-[#ffffff00] p-1 text-[#734F96] text-lg hover:text-[#301d43]  focus:text-[#309aac7a]"
                 >
                   <FaCartShopping className="h-6 w-6" aria-hidden="true" />
                   {/* This is going to be dynamically updated */}
-                  <h1 className="absolute top-[-10px] left-3  text-black font-bold" >1</h1>
+
+                  <h1 className="absolute top-[-10px] left-3  text-black font-bold">
+{/*                   {cart.reduce((total, item) => total + item.quantity, 0)}
+ */}                  </h1>
+  
                 </NavLink>
 
                 {/* Profile dropdown */}

@@ -48,6 +48,7 @@ assumenda dicta, fuga quia deleniti similique sunt voluptatem aliquam consequunt
           <label htmlFor="">Quantity</label>
           <input
             type="number"
+            min="1"
             name=""
             value={quantity}
             id=""
